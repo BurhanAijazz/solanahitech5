@@ -1,18 +1,13 @@
-console.log("hello world");
-function checkPalindrome(string) {
-    const len = string.length;
-    for (let i = 0; i < len / 2; i++) {
-
-        if (string[i] !== string[len - 1 - i]) {
-            return 'It is not a palindrome';
-        }
-    }
-    return 'It is a palindrome';
+function isPallindrome(s) {
+  let start = 0,
+    end = s.length - 1;
+  while (start < end) {
+    if (s[start++] != s[end--]) return false;
+  }
+  return true;
 }
+const s = process.argv[2];
+if (s) console.log(isPallindrome(s));
+else console.log("Enter string");
 
 
-const string = prompt('Enter a string: ');
-
-const value = checkPalindrome(string);
-
-console.log(value);
